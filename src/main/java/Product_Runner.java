@@ -16,22 +16,22 @@ public class Product_Runner {
                     
                     3-)Ürün girişi\
                     
-                    4-)Ürünü rafa koyma\
+                    4-)Ürün çıkışı\
                     
-                    5-)Ürün çıkışı\
+                    5-)Ürünü rafa koyma\
                     
                     6-)Sistem Çıkış""");
-            int selection = input.nextInt();
-            input.nextLine();
+            int selection = Integer.parseInt(input.nextLine());
 
             switch (selection) {
-                case 1:
+                case 1://ürün tanımlama
                     Methods.urunTanimla();
                     break;
                 case 2://Ürün listeleme
                     Methods.urunListeleme();
                     break;
                 case 3://Ürün girişi
+                    Methods.urunGirisi();
                     break;
                 case 4://Ürün çıkışı
                     break;
