@@ -29,6 +29,17 @@ public class Methods {
         }
     }
 
+    public static void rafaEkle(){
+        System.out.println("Rafa eklemek istediğiniz ürünün id numarasasını giriniz");
+        int id=input.nextInt();
+        input.nextLine(); //scan int methodu boşluk yakalama
+        Product product= urunMap.get(id); //hashten aldığımız objeyi atıyoruz
+        System.out.println("Hangi rafa eklensin");
+        String raf=input.nextLine();
+        product.setRaf(raf); //raf değişikliği burada
+        System.out.println(product.getUrunIsmi()+" ürünü "+product.getRaf()+" rafına başarılı bir şekilde eklendi");
+    }
+
 
 
 }

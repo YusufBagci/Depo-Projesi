@@ -36,6 +36,7 @@ public class Product_Runner {
                 case 4://Ürün çıkışı
                     break;
                 case 5://Ürünü rafa koyma
+                    Methods.rafaEkle();
                     break;
                 case 6://Sistemden Çıkış
                     break logoff;
