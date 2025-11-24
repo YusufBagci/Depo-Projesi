@@ -20,7 +20,7 @@ public class Product_Runner {
                     
                     5-)Ürün çıkışı\
                     
-                    6-)Sistemden Çıkış""");
+                    6-)Sistem Çıkış""");
             int selection = input.nextInt();
             input.nextLine();
 
