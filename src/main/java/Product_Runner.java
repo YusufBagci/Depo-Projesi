@@ -4,7 +4,7 @@ public class Product_Runner {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-
+        System.out.println();
         logoff:
         while (true) {
             System.out.println("""
@@ -20,7 +20,7 @@ public class Product_Runner {
                     
                     5-)Ürün çıkışı\
                     
-                    6-)Sistemden Çıkışlar""");
+                    6-)Sistem Çıkış""");
             int selection = input.nextInt();
             input.nextLine();
 
@@ -36,6 +36,7 @@ public class Product_Runner {
                 case 4://Ürün çıkışı
                     break;
                 case 5://Ürünü rafa koyma
+                    Methods.rafaEkle();
                     break;
                 case 6://Sistemden Çıkış
                     break logoff;
