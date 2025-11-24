@@ -28,7 +28,27 @@ public class Methods {
             System.out.println(u);
         }
     }
+    public static void urunGirisi() {
+        System.out.println("--- ÜRÜN GİRİŞİ ---");
+        urunListeleme();
 
+        System.out.print("Giriş yapmak istediğiniz ürün ID: ");
+        int id = Integer.parseInt(input.nextLine());
+        if (urunMap.containsKey(id)) {
+            int girilenMiktar = input.nextInt();
+
+            if (girilenMiktar <= 0) {
+                System.out.println("❌ HATA: Ürün girişi 0 veya negatif olamaz!");
+                return; // Metodu burada bitir, aşağıya inme.
+            }
+
+            Product urun = urunMap.get(id);
+            urun.setMiktar(urun.getMiktar() + girilenMiktar);
+            System.out.println("Yeni miktar: " + urun.getMiktar());
+        } else {
+            System.out.println("Bu ID sistemde kayıtlı değil.");
+        }
+    }
 
 }
 
