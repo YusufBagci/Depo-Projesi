@@ -49,6 +49,5 @@ public class Methods {
             System.out.println("Bu ID sistemde kayıtlı değil.");
         }
     }
-
 }
 
