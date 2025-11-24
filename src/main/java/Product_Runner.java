@@ -4,7 +4,7 @@ public class Product_Runner {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-
+        System.out.println();
         logoff:
         while (true) {
             System.out.println("""
