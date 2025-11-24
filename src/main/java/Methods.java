@@ -30,7 +30,7 @@ public class Methods {
     }
     public static void urunGirisi() {
         System.out.println("--- ÜRÜN GİRİŞİ ---");
-        urunListeleme();
+        urunListeleme(); // Girmeden önce ürün id görmek için.
 
         System.out.print("Giriş yapmak istediğiniz ürün ID: ");
         int id = Integer.parseInt(input.nextLine());
@@ -38,7 +38,7 @@ public class Methods {
             int girilenMiktar = input.nextInt();
 
             if (girilenMiktar <= 0) {
-                System.out.println("❌ HATA: Ürün girişi 0 veya negatif olamaz!");
+                System.out.println(" HATA: Ürün girişi 0 veya negatif olamaz!");
                 return; // Metodu burada bitir, aşağıya inme.
             }
 
