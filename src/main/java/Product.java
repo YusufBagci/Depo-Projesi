@@ -66,7 +66,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return String.format("%-5s %-10s %-10s %-10d %-10s %-10s", id, urunIsmi, uretici, miktar, birim, raf);
+        return String.format("%-5s %-10s %-15s %-10d %-10s %-10s", id, urunIsmi, uretici, miktar, birim, raf);
 
     }
 }
