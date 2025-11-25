@@ -1,6 +1,6 @@
 public class Product {
     static int idCounter;
-    private int id = 1000;
+    private int id;
     private String urunIsmi;
     private String uretici;
     private String birim;

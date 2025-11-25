@@ -18,7 +18,8 @@ public class Methods {
 
         Product yeniProduct = new Product(Product.idCounter, isim, ureticiIsmi, birim);
 
-        urunMap.put(Product.idCounter, yeniProduct); //ürünü Listeye ekledik
+        urunMap.put(yeniProduct.getId(), yeniProduct); //ürünü Listeye ekledik
+        System.out.println("ürünününz "+yeniProduct.getId()+" id numarası ile eklenmiştir");
         pressEnter();
     }
 
