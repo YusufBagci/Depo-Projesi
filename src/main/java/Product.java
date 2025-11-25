@@ -1,5 +1,5 @@
 public class Product {
-    static int idCounter;
+    static int idCounter=1000;
     private int id;
     private String urunIsmi;
     private String uretici;
@@ -7,8 +7,8 @@ public class Product {
     private int miktar = 0;   //ürün tanımlamasında mikttar ve raf girilmiyor o yüzden default değerlerini atayacağız
     private String raf = null;
 
-    public Product(int id, String urunIsmi, String uretici, String birim) {
-        this.id = id;
+    public Product( String urunIsmi, String uretici, String birim) {
+        this.id = idCounter;
         this.urunIsmi = urunIsmi;
         this.uretici = uretici;
         this.birim = birim;

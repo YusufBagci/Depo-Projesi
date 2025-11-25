@@ -16,7 +16,7 @@ public class Methods {
         System.out.print("Birim (çuval, litre, kg vs.): ");
         String birim = input.nextLine();
 
-        Product yeniProduct = new Product(Product.idCounter, isim, ureticiIsmi, birim);
+        Product yeniProduct = new Product(isim, ureticiIsmi, birim);
 
         urunMap.put(yeniProduct.getId(), yeniProduct); //ürünü Listeye ekledik
         System.out.println("ürününüz "+yeniProduct.getId()+" id numarası ile eklenmiştir");
