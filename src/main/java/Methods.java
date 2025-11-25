@@ -19,7 +19,7 @@ public class Methods {
         Product yeniProduct = new Product(Product.idCounter, isim, ureticiIsmi, birim);
 
         urunMap.put(yeniProduct.getId(), yeniProduct); //ürünü Listeye ekledik
-        System.out.println("ürünününz "+yeniProduct.getId()+" id numarası ile eklenmiştir");
+        System.out.println("ürününüz "+yeniProduct.getId()+" id numarası ile eklenmiştir");
         pressEnter();
     }
 
@@ -36,24 +36,54 @@ public class Methods {
 
         System.out.print("Giriş yapmak istediğiniz ürün ID: ");
         int id = Integer.parseInt(input.nextLine());
-        if (urunMap.containsKey(id)) {
-            System.out.println("Giriş yapmak istediğiniz ürün miktarını giriniz: ");
-            int girilenMiktar = Integer.parseInt(input.nextLine());
-
-            if (girilenMiktar <= 0) {
-                System.out.println(" HATA: Ürün girişi 0 veya negatif olamaz!");
-                pressEnter();
-                return; // Metodu burada bitir, aşağıya inme.
-            }
-
-            Product urun = urunMap.get(id);
-            urun.setMiktar(urun.getMiktar() + girilenMiktar);
-            System.out.println("Yeni miktar: " + urun.getMiktar());
-            pressEnter();
-        } else {
+        if (!urunMap.containsKey(id)) { //ürün yoksa çıkış
             System.out.println("Bu ID sistemde kayıtlı değil.");
             pressEnter();
+            return;
         }
+        System.out.println("Giriş yapmak istediğiniz ürün miktarını giriniz: ");
+        int girilenMiktar = Integer.parseInt(input.nextLine());
+
+        if (girilenMiktar <= 0) {
+            System.err.println(" HATA: Ürün girişi 0 veya negatif olamaz!");
+            pressEnter();
+            return;
+        }
+
+        Product urun = urunMap.get(id);
+        urun.setMiktar(urun.getMiktar() + girilenMiktar);
+        System.out.println("Yeni miktar: " + urun.getMiktar());
+        pressEnter();
+    }
+
+    public static void urunCikis() {
+        System.out.println("--- ÜRÜN ÇIKIŞI ---");
+        urunListeleme();
+
+        System.out.print("Çıkış yapmak istediğiniz ürün ID: ");
+        int id = Integer.parseInt(input.nextLine());
+
+        if (!urunMap.containsKey(id)) { //id si verilen ürün varmı kontrol
+            System.out.println("Bu ID sistemde kayıtlı değil.");
+            pressEnter();
+            return;
+        }
+        Product urun = urunMap.get(id);
+        if (urun.getMiktar() == 0) {// ürünün miktarı zaten 0'sa kontrolü
+            System.out.println("Girdiğiniz id deki ürünün miktarı zaten 0");
+            pressEnter();
+            return;
+        }
+        System.out.println("Çıkış yapmak istediğiniz ürün miktarını giriniz: ");
+        int girilenMiktar = Integer.parseInt(input.nextLine());
+        if (girilenMiktar > urun.getMiktar() || girilenMiktar < 0) {
+            System.out.println("Var olan ürün miktarından fazla ürün çıkışı yapamazsınız ve girilen miktar negatif olamaz");
+            pressEnter();
+            return;
+        }
+        urunMap.get(id).setMiktar(urun.getMiktar() - girilenMiktar);
+        System.out.println("Ürün çıkışı başarılı. Kalan ürün miktarı: " + urun.getMiktar());
+        pressEnter();
     }
 
     public static void rafaEkle() {

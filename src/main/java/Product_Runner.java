@@ -34,6 +34,7 @@ public class Product_Runner {
                     Methods.urunGirisi();
                     break;
                 case 4://Ürün çıkışı
+                    Methods.urunCikis();
                     break;
                 case 5://Ürünü rafa koyma
                     Methods.rafaEkle();
