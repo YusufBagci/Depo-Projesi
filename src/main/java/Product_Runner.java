@@ -4,7 +4,7 @@ public class Product_Runner {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-
+        System.out.println();
         logoff:
         while (true) {
             System.out.println("""
@@ -16,16 +16,15 @@ public class Product_Runner {
                     
                     3-)Ürün girişi\
                     
-                    4-)Ürünü rafa koyma\
+                    4-)Ürün çıkışı\
                     
-                    5-)Ürün çıkışı\
+                    5-)Ürünü rafa koyma\
                     
-                    6-)Sistemden Çıkışlar""");
-            int selection = input.nextInt();
-            input.nextLine();
+                    6-)Sistem Çıkış""");
+            int selection = Integer.parseInt(input.nextLine());
 
             switch (selection) {
-                case 1:
+                case 1://ürün tanımlama
                     Methods.urunTanimla();
                     break;
                 case 2://Ürün listeleme
@@ -37,6 +36,7 @@ public class Product_Runner {
                 case 4://Ürün çıkışı
                     break;
                 case 5://Ürünü rafa koyma
+                    Methods.rafaEkle();
                     break;
                 case 6://Sistemden Çıkış
                     break logoff;

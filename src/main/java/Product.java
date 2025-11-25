@@ -1,6 +1,6 @@
 public class Product {
     static int idCounter;
-    private int id = 1000;
+    private int id;
     private String urunIsmi;
     private String uretici;
     private String birim;
@@ -66,6 +66,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return String.format("%-10s %-10s %-10s %-10d %-10d %-10s", id, urunIsmi, uretici, miktar, birim, raf);
+        return String.format("%-5s %-10s %-15s %-10d %-10s %-10s", id, urunIsmi, uretici, miktar, birim, raf);
+
     }
 }
