@@ -21,7 +21,7 @@ public class Product_Runner {
                     5-)Ürünü rafa koyma\
                     
                     6-)Sistem Çıkış""");
-            int selection = Integer.parseInt(input.nextLine());
+            int selection = Methods.getIntTryCatch();
 
             switch (selection) {
                 case 1://ürün tanımlama
@@ -29,6 +29,7 @@ public class Product_Runner {
                     break;
                 case 2://Ürün listeleme
                     Methods.urunListeleme();
+                    Methods.pressEnter();
                     break;
                 case 3://Ürün girişi
                     Methods.urunGirisi();

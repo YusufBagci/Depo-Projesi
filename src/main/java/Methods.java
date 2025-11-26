@@ -26,23 +26,21 @@ public class Methods {
     public static void urunListeleme() { //deneme denem2
         System.out.printf("%-5s %-10s %-15s %-10s %-10s %-10s%n", "id", "ismi", "üreticisi", "miktar", "birimi", "raf");
         System.out.println("------------------------------------------------------------");
-        for (Product u : urunMap.values()) { //
-            System.out.println(u);
-        }
+        urunMap.values().forEach(System.out::println);
     }
     public static void urunGirisi() {
         System.out.println("--- ÜRÜN GİRİŞİ ---");
         urunListeleme(); // Girmeden önce ürün id görmek için.
 
         System.out.print("Giriş yapmak istediğiniz ürün ID: ");
-        int id = Integer.parseInt(input.nextLine());
+        int id = getIntTryCatch();
         if (!urunMap.containsKey(id)) { //ürün yoksa çıkış
             System.out.println("Bu ID sistemde kayıtlı değil.");
             pressEnter();
             return;
         }
         System.out.println("Giriş yapmak istediğiniz ürün miktarını giriniz: ");
-        int girilenMiktar = Integer.parseInt(input.nextLine());
+        int girilenMiktar = getIntTryCatch();
 
         if (girilenMiktar <= 0) {
             System.err.println(" HATA: Ürün girişi 0 veya negatif olamaz!");
@@ -61,7 +59,7 @@ public class Methods {
         urunListeleme();
 
         System.out.print("Çıkış yapmak istediğiniz ürün ID: ");
-        int id = Integer.parseInt(input.nextLine());
+        int id = getIntTryCatch();
 
         if (!urunMap.containsKey(id)) { //id si verilen ürün varmı kontrol
             System.out.println("Bu ID sistemde kayıtlı değil.");
@@ -75,7 +73,7 @@ public class Methods {
             return;
         }
         System.out.println("Çıkış yapmak istediğiniz ürün miktarını giriniz: ");
-        int girilenMiktar = Integer.parseInt(input.nextLine());
+        int girilenMiktar = getIntTryCatch();
         if (girilenMiktar > urun.getMiktar() || girilenMiktar < 0) {
             System.out.println("Var olan ürün miktarından fazla ürün çıkışı yapamazsınız ve girilen miktar negatif olamaz");
             pressEnter();
@@ -89,7 +87,7 @@ public class Methods {
     public static void rafaEkle() {
         urunListeleme();
         System.out.println("Rafa eklemek istediğiniz ürünün id numarasasını giriniz");
-        int id = Integer.parseInt(input.nextLine());
+        int id = getIntTryCatch();
         if (!urunMap.containsKey(id)) { //id yoksa direk dön
             System.out.println("Girdiğiniz id'de bir ürün bulunmuyor");
             pressEnter();
@@ -113,6 +111,16 @@ public class Methods {
     public static void pressEnter() {
         System.out.println("Devam etmek için Enter'a basınız...");
         input.nextLine();
+    }
+    public static int getIntTryCatch(){
+
+        while (true) {
+            try {
+                return Integer.parseInt(input.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Lütfen sadece sayısal değer giriniz");
+            }
+        }
     }
 
 
