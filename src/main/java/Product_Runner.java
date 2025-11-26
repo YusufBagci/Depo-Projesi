@@ -29,6 +29,7 @@ public class Product_Runner {
                     break;
                 case 2://Ürün listeleme
                     Methods.urunListeleme();
+                    Methods.pressEnter();
                     break;
                 case 3://Ürün girişi
                     Methods.urunGirisi();

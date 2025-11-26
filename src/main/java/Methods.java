@@ -26,9 +26,7 @@ public class Methods {
     public static void urunListeleme() { //deneme denem2
         System.out.printf("%-5s %-10s %-15s %-10s %-10s %-10s%n", "id", "ismi", "üreticisi", "miktar", "birimi", "raf");
         System.out.println("------------------------------------------------------------");
-        for (Product u : urunMap.values()) { //
-            System.out.println(u);
-        }
+        urunMap.values().forEach(System.out::println);
     }
     public static void urunGirisi() {
         System.out.println("--- ÜRÜN GİRİŞİ ---");
