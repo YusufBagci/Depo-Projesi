@@ -35,7 +35,7 @@ public class Methods {
         System.out.print("Giriş yapmak istediğiniz ürün ID: ");
         int id = getIntTryCatch();
         if (!urunMap.containsKey(id)) { //ürün yoksa çıkış
-            System.out.println("Bu ID sistemde kayıtlı değil.");
+            System.err.println("Bu ID sistemde kayıtlı değil.");
             pressEnter();
             return;
         }
@@ -62,20 +62,20 @@ public class Methods {
         int id = getIntTryCatch();
 
         if (!urunMap.containsKey(id)) { //id si verilen ürün varmı kontrol
-            System.out.println("Bu ID sistemde kayıtlı değil.");
+            System.err.println("Bu ID sistemde kayıtlı değil.");
             pressEnter();
             return;
         }
         Product urun = urunMap.get(id);
         if (urun.getMiktar() == 0) {// ürünün miktarı zaten 0'sa kontrolü
-            System.out.println("Girdiğiniz id deki ürünün miktarı zaten 0");
+            System.err.println("Girdiğiniz id deki ürünün miktarı zaten 0");
             pressEnter();
             return;
         }
         System.out.println("Çıkış yapmak istediğiniz ürün miktarını giriniz: ");
         int girilenMiktar = getIntTryCatch();
         if (girilenMiktar > urun.getMiktar() || girilenMiktar < 0) {
-            System.out.println("Var olan ürün miktarından fazla ürün çıkışı yapamazsınız ve girilen miktar negatif olamaz");
+            System.err.println("Var olan ürün miktarından fazla ürün çıkışı yapamazsınız ve girilen miktar negatif olamaz");
             pressEnter();
             return;
         }
@@ -89,7 +89,7 @@ public class Methods {
         System.out.println("Rafa eklemek istediğiniz ürünün id numarasasını giriniz");
         int id = getIntTryCatch();
         if (!urunMap.containsKey(id)) { //id yoksa direk dön
-            System.out.println("Girdiğiniz id'de bir ürün bulunmuyor");
+            System.err.println("Girdiğiniz id'de bir ürün bulunmuyor");
             pressEnter();
             return;
         }
@@ -98,7 +98,7 @@ public class Methods {
         System.out.println("Hangi rafa eklensin");
         String raf = input.nextLine();
         if (raf.isBlank()) { //response boş geçilirse return
-            System.out.println("Raf ismi boş geçilemez");
+            System.err.println("Raf ismi boş geçilemez");
             pressEnter();
             return;
         }
@@ -118,7 +118,7 @@ public class Methods {
             try {
                 return Integer.parseInt(input.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Lütfen sadece sayısal değer giriniz");
+                System.err.println("Lütfen sadece sayısal değer giriniz");
             }
         }
     }
