@@ -8,12 +8,12 @@ public class Methods {
 
     public static void urunTanimla() {
         System.out.print("Ürün ismi: ");
-        String isim = input.nextLine();
+        String isim = isBlankCheck("Ürün ismi");
 
         System.out.print("Üretici ismi: ");
-        String ureticiIsmi = input.nextLine();
+        String ureticiIsmi = isBlankCheck("Üretici ismi");
 
-        System.out.print("Birim (çuval, litre, kg vs.): ");
+        System.out.print("Birim (çuval, litre, kg vs.)yoksa boş bırakın: ");
         String birim = input.nextLine();
 
         Product yeniProduct = new Product(isim, ureticiIsmi, birim);
@@ -121,6 +121,14 @@ public class Methods {
                 System.err.println("Lütfen sadece sayısal değer giriniz");
             }
         }
+    }
+    public static String isBlankCheck(String str){
+        String userInput=input.nextLine();
+        while (userInput.isBlank()){
+            System.err.println(str+" Boş bırakılamaz.");
+            userInput=input.nextLine();
+        }
+        return userInput;
     }
 
 
