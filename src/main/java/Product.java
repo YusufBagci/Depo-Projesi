@@ -5,7 +5,7 @@ public class Product {
     private String uretici;
     private String birim;
     private int miktar = 0;   //ürün tanımlamasında mikttar ve raf girilmiyor o yüzden default değerlerini atayacağız
-    private String raf = null;
+    private String raf = "-";
 
     public Product( String urunIsmi, String uretici, String birim) {
         this.id = idCounter;

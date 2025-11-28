@@ -1,10 +1,6 @@
-import java.util.Scanner;
-
 public class Product_Runner {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
-        System.out.println();
         boolean isRunning = true;
         while (isRunning) {
             System.out.println("""
