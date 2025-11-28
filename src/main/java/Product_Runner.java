@@ -42,6 +42,9 @@ public class Product_Runner {
                     break;
                 case 6://Sistemden Çıkış
                     isRunning = false;
+                default:
+                    System.out.println("Lütfen geçerli bir sayı giriniz");
+                    Methods.pressEnter();
             }
         }
 
