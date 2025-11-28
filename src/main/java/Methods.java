@@ -8,13 +8,13 @@ public class Methods {
 
     public static void urunTanimla() {
         System.out.print("Ürün ismi: ");
-        String isim = isBlankCheck("Ürün ismi");
+        String isim = isBlankCheck("Ürün ismi").trim().toLowerCase();
 
         System.out.print("Üretici ismi: ");
-        String ureticiIsmi = isBlankCheck("Üretici ismi");
+        String ureticiIsmi = isBlankCheck("Üretici ismi").trim().toLowerCase();
 
         System.out.print("Birim (çuval, litre, kg vs.)yoksa boş bırakın: ");
-        String birim = input.nextLine();
+        String birim = input.nextLine().trim().toLowerCase();
 
         Product yeniProduct = new Product(isim, ureticiIsmi, birim);
 
@@ -96,12 +96,8 @@ public class Methods {
         Product product = urunMap.get(id); //hashten aldığımız objeyi atıyoruz
 
         System.out.println("Hangi rafa eklensin");
-        String raf = input.nextLine();
-        if (raf.isBlank()) { //response boş geçilirse return
-            System.err.println("Raf ismi boş geçilemez");
-            pressEnter();
-            return;
-        }
+        String raf = isBlankCheck("Raf ismi").trim().toLowerCase();
+
         product.setRaf(raf); //raf değişikliği burada
 
         System.out.println(product.getUrunIsmi()+" ürünü "+product.getRaf()+" rafına başarılı bir şekilde eklendi");
