@@ -5,8 +5,8 @@ public class Product_Runner {
 
         Scanner input = new Scanner(System.in);
         System.out.println();
-        logoff:
-        while (true) {
+        boolean isRunning = true;
+        while (isRunning) {
             System.out.println("""
                     Lütfen yapmak istediğini işlemi seçiniz\
                     
@@ -41,7 +41,10 @@ public class Product_Runner {
                     Methods.rafaEkle();
                     break;
                 case 6://Sistemden Çıkış
-                    break logoff;
+                    isRunning = false;
+                default:
+                    System.out.println("Lütfen geçerli bir sayı giriniz");
+                    Methods.pressEnter();
             }
         }
 
